@@ -1,0 +1,114 @@
+.ajusta-botao-tbl {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.ajusta-margin-btn {
+    margin-left: 0%;
+}
+
+.zera-padd-left {
+    padding-left: 0%;
+}
+
+/* .btn-pesquisa { */
+#btnPesquisar{    
+    margin-top: 65% ;
+    margin-left: 35%;    
+    padding: 10% 15% 10% 15%;
+}
+
+#btnAdicionarNcm, #btnSelecionarInventario{
+    padding-right: 1%;
+    padding-left: 1%;
+
+    margin: 3% 2% 1% 0%;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/*//////////////////////////////////////////////////////////////////
+[ BREADCRUMB ]*/
+.breadcrumb-personalizado {
+    background: #fff; 
+    border-radius: 0;
+    border-bottom: 2px solid#e4ba06;
+    margin-bottom: 2rem;
+    padding-left: 0;
+}
+
+.breadcrumb-item-personalizado {
+    color: #1b8140; font-weight: 500
+}
+
+
+/*//////////////////////////////////////////////////////////////////
+[ PERSONALIZANDO FORM ]*/
+section {
+    width: 100%;
+}
+
+
+.limiter-container {
+    width: 100%;
+    margin: 0 auto;
+}
+  
+.container-form-100 {
+    width: 100%;  
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+  
+    /* background: -webkit-linear-gradient(-135deg, #c850c0, #4158d0);
+    background: -o-linear-gradient(-135deg, #c850c0, #4158d0);
+    background: -moz-linear-gradient(-135deg, #c850c0, #4158d0);
+    background: linear-gradient(-135deg, #c850c0, #4158d0); */
+    /* background: linear-gradient(-135deg, #1f83f7 0%, #b436f3 50%, #a813dc 100%); */
+    background: #4848CE;
+
+
+}
+
+.wrap-form-100 {
+    width: 95%;
+    /* width: 90%; */
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+  
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 2% 3% 3% 3%;
+
+}
+  
+/*
+ * Content
+ */
+
+[role="main"] {
+    padding-top: 7%;
+
+    background: #4848CE;
+    /* background: linear-gradient(-135deg, #1f83f7 0%, #b436f3 50%, #a813dc 100%); */
+
+    /* Space for fixed navbar */
+    /* background-color: #ececec; */
+}
