@@ -5,8 +5,12 @@ const
 
 const titles = {
   'index': 'Dashboard',
-  '/emissor-fiscal_html/default' : 'default'
-  // 'blank': 'Blank',
+  // '/emissor-fiscal_html/default' : 'default',
+  '/default' : 'default',
+  '/cfop/cadastro' : 'Cadastro de Cfop',
+  '/cfop/consulta': 'Consulta de Cfop',
+  
+  'blank': 'Blank',
   // 'buttons': 'Buttons',
   // 'calendar': 'Calendar',
   // 'charts': 'Charts',
