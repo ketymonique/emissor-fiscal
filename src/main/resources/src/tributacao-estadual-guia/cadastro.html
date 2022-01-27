@@ -30,11 +30,11 @@
 				<!-- FORMULÁRIO p/ CADASTRAR/ EDITAR -->
 				<form th:action="@{/tributacao-estadual/guia/cadastro}" th:object="${tribEstaGuia}" method="POST">
 					<!-- ESTADOS e TIPO GUIA-->
-					<div class="form-row">
+					<div class="row">
 
 						<div class="form-group col-md-3">
 							<label for="cmbTipoGuia"><strong>Tipo da Guia</strong></label>
-							<select class="custom-select" id="tipoGuia" name="tipoGuia" required>
+							<select class="form-select" id="tipoGuia" name="tipoGuia" required>
 								<option selected id="opTipoGuia"> </option>
 								<option th:each="tipoGuia: ${listTipoGuia}" th:value="${tipoGuia}" th:selected="${tipoGuia ==tipoGuiaSelecionado}" th:text="${tipoGuia}" ></option>
 							</select>
@@ -42,7 +42,7 @@
 
 						<div class="form-group col-md-2">
 							<label for="cmbEstadoOrigem"><strong>Estado ORIGEM</strong></label>
-							<select class="custom-select" name="ufOrigemId">
+							<select class="form-select" name="ufOrigemId">
 								<option selected id="opEstadoOrigem"> </option>
 								<option th:each="estado : ${listEstado}" th:value="${estado.id}" th:id="${estado.sigla}" th:selected="${estado.id == ufOrigemIdSelecionado}" th:text="${estado.sigla}" ></option>
 							</select>
@@ -50,25 +50,31 @@
 
 						<div class="form-group col-md-2">
 							<label for="cmbEstadoDestino"><strong>Estado DESTINO</strong></label>
-							<select class="custom-select" name="ufDestinoId">
+							<select class="form-select" name="ufDestinoId">
 								<option selected id="opEstadoDestino"> </option>
 								<!-- ${} essa concatenação no id é uma POG, para diferenciar do id de UF ORIGEM -->
 								<option th:each="estado : ${listEstado}" th:value="${estado.id}" th:id="${_}+${estado.sigla}" th:selected="${estado.id == ufDestinoIdSelecionado}" th:text="${estado.sigla}" ></option>
 							</select>
 						</div>
 
-						<div class="form-group col-md-2">
+						<!-- <div class="form-group col-md-2">
 							<label for="chkProdutoImportado"><strong>É produto importado ?</strong></label>
 							<input type="checkbox" class="form-control " id="chkProdutoImportado" th:checked="*{produtoImportado}" name="produtoImportado" data-toggle="tooltip" data-placement="top" title="Importado é quando a origem do produto é = 1, 2, 3, 6 ou 7" />
+						</div>  -->
+						<div class="form-group col-md-2">
+							<label class="form-check-label" for="chkProdutoImportado"><strong>É produto importado ?</strong></label>
+							<div>
+								<input type="checkbox" class="form-check-input" id="chkProdutoImportado" th:checked="*{produtoImportado}" name="produtoImportado" data-toggle="tooltip" data-placement="top" title="Importado é quando a origem do produto é = 1, 2, 3, 6 ou 7" />
+							</div>
 						</div> 
 						
 					</div>
 
 					<!-- OPERAÇÃO e NCM -->
-					<div class="form-row">
+					<div class="row">
 						<div class="form-group col-md-4">
 							<label for="cmbOperacao"><strong>Operação</strong></label>
-							<select class="custom-select" name="operacaoId">
+							<select class="form-select" name="operacaoId">
 							<option selected id="opOperacao"> </option>
 								<option th:each="operacao : ${listOperacao}" th:value="${operacao.id}" th:id="${operacao.descricao}" th:selected="${operacao.id == operacaoIdSelecionado}" th:text="${operacao.descricao}" ></option>
 							</select>
@@ -86,7 +92,7 @@
 					</div>
 
 					<!-- ALIQ DO IMPOSTO -->
-					<div class="form-row">
+					<div class="row">
 
 						<!-- <div class="form-group col-md-2">
 							<label for="txtIcmsCst"><strong>ICMS CST</strong></label>
@@ -112,9 +118,9 @@
 					</div>
 
 					<!-- MSG -->
-					<div class="form-row">
+					<div class="row">
 							<!-- Mensagem -->
-						<!-- <div class="form-row"> -->
+						<!-- <div class="row"> -->
 							<div class="form-group col-md-12">
 								<label for="txtDescricao">Mensagem</label>
 								<i class="fas fa-pencil-alt prefix"></i>
@@ -125,7 +131,7 @@
 				
 
 					<!-- BTN ALTERAR/CADASTRAR -->
-					<div class="form-row">
+					<div class="row">
 						<!-- <input type="text" th:field="*{id}" class="form-control" id="txtId" name="id" hidden> -->
 						<input type="text" class="form-control" id="txtId" th:field="*{id}" name="id" hidden="true" >
 

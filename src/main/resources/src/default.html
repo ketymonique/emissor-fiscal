@@ -585,11 +585,24 @@
         <main class='main-content bgc-grey-100'>
           <div id='mainContent'>
             <div class="full-container">
-              
-              <div th:replace="${content}">
-                <p>Layout content</p>
-              </div>
-
+        
+              <main class='main-content bgc-grey-100'>
+                <div id='mainContent'>
+                  <div class="row gap-20 masonry pos-r">
+                    <div class="masonry-sizer col-md-6"></div>
+                    <div class="masonry-item col-md-12">
+                      <div class="bgc-white p-20 bd">
+        
+                        <div th:replace="${content}">
+                          <p>Layout content</p>
+                        </div>
+        
+        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </main>
             </div>
           </div>
         </main>
