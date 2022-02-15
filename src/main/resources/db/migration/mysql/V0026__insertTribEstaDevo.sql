@@ -162,7 +162,10 @@ INSERT INTO trib_esta_devo (icms_cst, cfop_venda, cfop_entr, cfop_nota_devo, fin
 -- ==================================================================================================================================		
 
 
-
+-- =========================================== 21 - REMESSA P/ CONSERTO (ATIVO IMOBILIZADO/USO E CONSUMO) ===================================================
+INSERT INTO trib_esta_devo (icms_cst, cfop_venda, cfop_entr, cfop_nota_devo, finalidade, regime_tributario , usa_mesm_cst_forn, mens, oper_id) 
+					VALUES	(41, 5102, 1556, 5915, "COMERCIALIZACAO", "NORMAL", false , "", 21);
+-- ===============================================================================================================================
 
 -- =========================================== 84 - REMESSA P/ CONSERTO (ATIVO/CONSUMO) - INTERESTADUAL ===================================================
 INSERT INTO trib_esta_devo (icms_cst, cfop_venda, cfop_entr, cfop_nota_devo, finalidade, regime_tributario , usa_mesm_cst_forn, mens, oper_id) 
@@ -178,12 +181,37 @@ INSERT INTO trib_esta_devo (icms_cst, cfop_venda, cfop_entr, cfop_nota_devo, fin
 -- ICMS_CST == null -> Deverá ser usado a mesma que vier na NF do fornecedor							
 INSERT INTO trib_esta_devo (icms_cst, cfop_venda, cfop_entr, cfop_nota_devo, finalidade, regime_tributario , usa_mesm_cst_forn, mens, oper_id) 
 					VALUES	(null, 0, 0, 5949, "COMERCIALIZACAO", "NORMAL", true , "", 10);
+				
+-- PARA os casos em que o fornecedor é do simples nacional (NÃO usa a mesma cst do fornecedor)
+INSERT INTO trib_esta_devo (icms_cst, cfop_venda, cfop_entr, cfop_nota_devo, finalidade, regime_tributario , usa_mesm_cst_forn, mens, oper_id) 
+					VALUES	(0, 5101, 1102, 5949, "COMERCIALIZACAO", "NORMAL", false , "", 10);
+INSERT INTO trib_esta_devo (icms_cst, cfop_venda, cfop_entr, cfop_nota_devo, finalidade, regime_tributario , usa_mesm_cst_forn, mens, oper_id) 
+					VALUES	(0, 5102, 1102, 5949, "COMERCIALIZACAO", "NORMAL", false , "", 10);
+INSERT INTO trib_esta_devo (icms_cst, cfop_venda, cfop_entr, cfop_nota_devo, finalidade, regime_tributario , usa_mesm_cst_forn, mens, oper_id) 
+					VALUES	(60, 5401, 1403, 5949, "COMERCIALIZACAO", "NORMAL", false , "", 10);
+INSERT INTO trib_esta_devo (icms_cst, cfop_venda, cfop_entr, cfop_nota_devo, finalidade, regime_tributario , usa_mesm_cst_forn, mens, oper_id) 
+					VALUES	(60, 5403, 1403, 5949, "COMERCIALIZACAO", "NORMAL", false , "", 10);
+INSERT INTO trib_esta_devo (icms_cst, cfop_venda, cfop_entr, cfop_nota_devo, finalidade, regime_tributario , usa_mesm_cst_forn, mens, oper_id) 
+					VALUES	(60, 5405, 1403, 5949, "COMERCIALIZACAO", "NORMAL", false , "", 10);						
+		
 -- ==================================================================================================================================		
 
 -- ============================================ 29 - OUTRAS SAIDAS NAO ESPECIFICADAS ================================================
 -- ICMS_CST == null -> Deverá ser usado a mesma que vier na NF do fornecedor							
 INSERT INTO trib_esta_devo (icms_cst, cfop_venda, cfop_entr, cfop_nota_devo, finalidade, regime_tributario , usa_mesm_cst_forn, mens, oper_id) 
 					VALUES	(null, 0, 0, 5949, "COMERCIALIZACAO", "NORMAL", true , "", 29);
+
+-- PARA os casos em que o fornecedor é do simples nacional (NÃO usa a mesma cst do fornecedor)			
+INSERT INTO trib_esta_devo (icms_cst, cfop_venda, cfop_entr, cfop_nota_devo, finalidade, regime_tributario , usa_mesm_cst_forn, mens, oper_id) 
+					VALUES	(0, 5101, 1102, 5949, "COMERCIALIZACAO", "NORMAL", false , "", 29);
+INSERT INTO trib_esta_devo (icms_cst, cfop_venda, cfop_entr, cfop_nota_devo, finalidade, regime_tributario , usa_mesm_cst_forn, mens, oper_id) 
+					VALUES	(0, 5102, 1102, 5949, "COMERCIALIZACAO", "NORMAL", false , "", 29);
+INSERT INTO trib_esta_devo (icms_cst, cfop_venda, cfop_entr, cfop_nota_devo, finalidade, regime_tributario , usa_mesm_cst_forn, mens, oper_id) 
+					VALUES	(60, 5401, 1403, 5949, "COMERCIALIZACAO", "NORMAL", false , "", 29);
+INSERT INTO trib_esta_devo (icms_cst, cfop_venda, cfop_entr, cfop_nota_devo, finalidade, regime_tributario , usa_mesm_cst_forn, mens, oper_id) 
+					VALUES	(60, 5403, 1403, 5949, "COMERCIALIZACAO", "NORMAL", false , "", 29);
+INSERT INTO trib_esta_devo (icms_cst, cfop_venda, cfop_entr, cfop_nota_devo, finalidade, regime_tributario , usa_mesm_cst_forn, mens, oper_id) 
+					VALUES	(60, 5405, 1403, 5949, "COMERCIALIZACAO", "NORMAL", false , "", 29);			
 -- ==================================================================================================================================		
 
 
@@ -191,12 +219,36 @@ INSERT INTO trib_esta_devo (icms_cst, cfop_venda, cfop_entr, cfop_nota_devo, fin
 -- ICMS_CST == null -> Deverá ser usado a mesma que vier na NF do fornecedor							
 INSERT INTO trib_esta_devo (icms_cst, cfop_venda, cfop_entr, cfop_nota_devo, finalidade, regime_tributario , usa_mesm_cst_forn, mens, oper_id) 
 					VALUES	(null, 0, 0, 6949, "COMERCIALIZACAO", "NORMAL", true , "", 11);
+
+-- PARA os casos em que o fornecedor é do simples nacional (NÃO usa a mesma cst do fornecedor)
+INSERT INTO trib_esta_devo (icms_cst, cfop_venda, cfop_entr, cfop_nota_devo, finalidade, regime_tributario , usa_mesm_cst_forn, mens, oper_id) 
+					VALUES	(0, 6101, 2102, 6949, "COMERCIALIZACAO", "NORMAL", false , "", 11);
+INSERT INTO trib_esta_devo (icms_cst, cfop_venda, cfop_entr, cfop_nota_devo, finalidade, regime_tributario , usa_mesm_cst_forn, mens, oper_id) 
+					VALUES	(0, 6102, 2102, 6949, "COMERCIALIZACAO", "NORMAL", false , "", 11);
+INSERT INTO trib_esta_devo (icms_cst, cfop_venda, cfop_entr, cfop_nota_devo, finalidade, regime_tributario , usa_mesm_cst_forn, mens, oper_id) 
+					VALUES	(60, 6401, 2403, 6949, "COMERCIALIZACAO", "NORMAL", false , "", 11);
+INSERT INTO trib_esta_devo (icms_cst, cfop_venda, cfop_entr, cfop_nota_devo, finalidade, regime_tributario , usa_mesm_cst_forn, mens, oper_id) 
+					VALUES	(60, 6403, 2403, 6949, "COMERCIALIZACAO", "NORMAL", false , "", 11);
+INSERT INTO trib_esta_devo (icms_cst, cfop_venda, cfop_entr, cfop_nota_devo, finalidade, regime_tributario , usa_mesm_cst_forn, mens, oper_id) 
+					VALUES	(60, 6405, 2403, 6949, "COMERCIALIZACAO", "NORMAL", false , "", 11);			
 -- ======================================================================================================================================		
 
 -- =============================================== 30 - OUTRAS SAIDAS (SIMPLES REMESSA) ================================================
 -- ICMS_CST == null -> Deverá ser usado a mesma que vier na NF do fornecedor							
 INSERT INTO trib_esta_devo (icms_cst, cfop_venda, cfop_entr, cfop_nota_devo, finalidade, regime_tributario , usa_mesm_cst_forn, mens, oper_id) 
 					VALUES	(null, 0, 0, 6949, "COMERCIALIZACAO", "NORMAL", true , "", 30);
+
+-- PARA os casos em que o fornecedor é do simples nacional (NÃO usa a mesma cst do fornecedor)
+INSERT INTO trib_esta_devo (icms_cst, cfop_venda, cfop_entr, cfop_nota_devo, finalidade, regime_tributario , usa_mesm_cst_forn, mens, oper_id) 
+					VALUES	(0, 6101, 2102, 6949, "COMERCIALIZACAO", "NORMAL", false , "", 30);
+INSERT INTO trib_esta_devo (icms_cst, cfop_venda, cfop_entr, cfop_nota_devo, finalidade, regime_tributario , usa_mesm_cst_forn, mens, oper_id) 
+					VALUES	(0, 6102, 2102, 6949, "COMERCIALIZACAO", "NORMAL", false , "", 30);
+INSERT INTO trib_esta_devo (icms_cst, cfop_venda, cfop_entr, cfop_nota_devo, finalidade, regime_tributario , usa_mesm_cst_forn, mens, oper_id) 
+					VALUES	(60, 6401, 2403, 6949, "COMERCIALIZACAO", "NORMAL", false , "", 30);
+INSERT INTO trib_esta_devo (icms_cst, cfop_venda, cfop_entr, cfop_nota_devo, finalidade, regime_tributario , usa_mesm_cst_forn, mens, oper_id) 
+					VALUES	(60, 6403, 2403, 6949, "COMERCIALIZACAO", "NORMAL", false , "", 30);
+INSERT INTO trib_esta_devo (icms_cst, cfop_venda, cfop_entr, cfop_nota_devo, finalidade, regime_tributario , usa_mesm_cst_forn, mens, oper_id) 
+					VALUES	(60, 6405, 2403, 6949, "COMERCIALIZACAO", "NORMAL", false , "", 11);
 -- ======================================================================================================================================		
 
 
@@ -219,6 +271,19 @@ INSERT INTO trib_esta_devo (icms_cst, cfop_venda, cfop_entr, cfop_nota_devo, fin
 INSERT INTO trib_esta_devo (icms_cst, cfop_venda, cfop_entr, cfop_nota_devo, finalidade, regime_tributario , usa_mesm_cst_forn, mens, oper_id) 
 					VALUES	(60, 5656, 1662, 1662, "COMERCIALIZACAO", "NORMAL", false , "", 8);
 
+-- devolucao de venda futura
+INSERT INTO trib_esta_devo (icms_cst, cfop_venda, cfop_entr, cfop_nota_devo, finalidade, regime_tributario , usa_mesm_cst_forn, mens, oper_id) 
+					VALUES	(00, 5117, 1202, 1202, "COMERCIALIZACAO", "NORMAL", false , "", 8);
+
+INSERT INTO trib_esta_devo (icms_cst, cfop_venda, cfop_entr, cfop_nota_devo, finalidade, regime_tributario , usa_mesm_cst_forn, mens, oper_id) 
+					VALUES	(60, 5117, 1411, 1411, "COMERCIALIZACAO", "NORMAL", false , "", 8);
+
+-- Devolucao de Sat que Virou NFE (encima da operação "movimento já registra em ECF")					
+INSERT INTO trib_esta_devo (icms_cst, cfop_venda, cfop_entr, cfop_nota_devo, finalidade, regime_tributario , usa_mesm_cst_forn, mens, oper_id) 
+					VALUES	(00, 5929, 1202, 1202, "COMERCIALIZACAO", "NORMAL", false , "", 8);
+
+INSERT INTO trib_esta_devo (icms_cst, cfop_venda, cfop_entr, cfop_nota_devo, finalidade, regime_tributario , usa_mesm_cst_forn, mens, oper_id) 
+					VALUES	(60, 5929, 1411, 1411, "COMERCIALIZACAO", "NORMAL", false , "", 8);
 -- =========================================== 9 - DEVOLUCAO DO CLIENTE INTERESTADUAL ===================================================
 INSERT INTO trib_esta_devo (icms_cst, cfop_venda, cfop_entr, cfop_nota_devo, finalidade, regime_tributario , usa_mesm_cst_forn, mens, oper_id) 
 					VALUES	(0, 6101, 2102, 2102, "COMERCIALIZACAO", "NORMAL", false , "", 9);

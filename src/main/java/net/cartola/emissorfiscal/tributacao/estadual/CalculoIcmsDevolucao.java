@@ -10,6 +10,7 @@ import java.util.logging.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import net.cartola.emissorfiscal.devolucao.Devolucao;
 import net.cartola.emissorfiscal.devolucao.DevolucaoItem;
 import net.cartola.emissorfiscal.documento.DocumentoFiscalItem;
 import net.cartola.emissorfiscal.operacao.Operacao;
@@ -30,9 +31,10 @@ import net.cartola.emissorfiscal.tributacao.federal.CalculoIpi;
 public class CalculoIcmsDevolucao {
 
 	private static final Logger LOG = Logger.getLogger(CalculoIcmsDevolucao.class.getName());
-	
+	private Devolucao devo;
 	@Autowired
 	private CalculoIpi calculoIpi;
+	
 	
 	/**
 	 * Esse é o método que irá calcular o ICMS para as: DEVOLUÇÕES, REMESSSAS EM GARANTIAS e OUTRAS SAÍDAS
@@ -42,9 +44,11 @@ public class CalculoIcmsDevolucao {
 	 * @param devoItem
 	 * @return 
 	 */
-	public Optional<CalculoImposto> calculaIcmsDevolucao(DocumentoFiscalItem di, TributacaoEstadualDevolucao tribEstaDevo, DevolucaoItem devoItem) {
+	public Optional<CalculoImposto> calculaIcmsDevolucao(DocumentoFiscalItem di, TributacaoEstadualDevolucao tribEstaDevo, DevolucaoItem devoItem, Devolucao devo) {
 		Optional<CalculoImposto> opCalcImposto;
 
+		 this.devo = devo;
+				 
 		if(tribEstaDevo.isUsaMesmaCstFornecedor()) {
 			opCalcImposto = calculaIcmsDevolucao(di, tribEstaDevo, devoItem, devoItem.getIcmsCstFornecedor());
 		} else {
@@ -125,13 +129,17 @@ public class CalculoIcmsDevolucao {
 	
 	
 	private BigDecimal calcularOutrasDespesasAcessorias(DevolucaoItem devoItem, Operacao operacao) {
+		if(devo.getDestinatario().isZeraOutrasDespesas() && operacao.isRemessaParaFornecedor()) {
+		     return BigDecimal.ZERO;
+		}
+		
 		final BigDecimal valorIcms = calcularIcmsBase(devoItem).multiply(devoItem.getIcmsAliquota());
 	
 		BigDecimal valorTotalFreteAndOutrasDespesDaOrigem = devoItem.getValorFrete()
 							.add(devoItem.getValorOutrasDespesasAcessorias())
 //							.add(devoItem.getIpi)
 							.multiply(devoItem.getQuantidade());
-		
+	
 		if(operacao.isRemessaParaFornecedor()) {
 			BigDecimal valorIpi = calculoIpi.calcularIpiDevolvido(devoItem);
 			valorTotalFreteAndOutrasDespesDaOrigem = valorTotalFreteAndOutrasDespesDaOrigem.add(valorIpi);
