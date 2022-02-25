@@ -1,6 +1,6 @@
 # emissor-fiscal
 
-Projeto criado para um analista fiscal, ser o responsável por manter as tributações estaduais e federais que serão usadas no cálculo, 
+Projeto criado para um analista fiscal ser o responsável por manter as tributações estaduais e federais que serão usadas no cálculo 
 de documentos fiscais de saídas (emitidos), assim como a geração do arquivo SPED FISCAL (EFD ICMS IPI). Até o Momento funciona basicamente da seguinte forma:  
 
 
